@@ -11,6 +11,35 @@
         "tasks": "Задачи",
         "reports": "Отчеты"
     },
-    "english": "Английский",
-    "russian": "Русский"
+    "settings": {
+        "colorScheme": "Цветовая схема",
+        "colorTheme": "Цветовая тема",
+        "colorThemeVariants": {
+            "light": "Светлая",
+            "dark": "Тёмная"
+        },
+        "timeSettings": "Настройки отображения времени",
+        "weekStart": "Начало недели",
+        "weekStartVariants": {
+            "sundey": "Воскресенье",
+            "mondey": "Понедельник"
+        },
+        "timeFormat": "Формат времени",
+        "timeFormatVariants": {
+            "24hours": "24 часа",
+            "12hours": "12 часов"
+        },
+        "dateFormat": "Формат даты",
+        "dateFormatVariant": {
+            "mm/dd/gg": "ММ/ДД/ГГ",
+            "dd/mm/gg": "ДД/ММ/ГГ",
+            "mmddgg": "ММ.ДД.ГГ",
+            "ddmmgg": "ДД.ММ.ГГ"
+        }
+    },
+    "lang": "Язык",
+    "langVariants": {
+        "english": "Английский",
+        "russian": "Русский"    
+    }
 }

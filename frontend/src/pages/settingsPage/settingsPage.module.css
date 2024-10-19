@@ -1,3 +1,101 @@
-.title{
-    color: var(--background);
+.settings{
+    padding-bottom: 30px;
+}
+.colorScheme{
+
+}
+.settingTitle, .timeSettingsTitle{
+    margin: 54px 0 28px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.colorPalette{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 35px;
+}
+.color{
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    &.blueViolet{
+        background-color: var(--color-schema-blueViolet);
+    }
+    &.blue{
+        background-color: var(--color-schema-blue);
+    }
+    &.lightBlue{
+        background-color: var(--color-schema-lightBlue);
+    }
+    &.green{
+        background-color: var(--color-schema-green);
+    }
+    &.darkGreen{
+        background-color: var(--color-schema-darkGreen);
+    }
+    &.greenYellow{
+        background-color: var(--color-schema-greenYellow);
+    }
+    &.violet{
+        background-color: var(--color-schema-violet);
+    }
+    &.lavander{
+        background-color: var(--color-schema-lavander);
+    }
+    &.pink{
+        background-color: var(--color-schema-pink);
+    }
+    &.brown{
+        background-color: var(--color-schema-brown);
+    }
+    &.red{
+        background-color: var(--color-schema-red);
+    }
+    &.orange{
+        background-color: var(--color-schema-orange);
+    }
+}
+.colorThemes{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.theme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.lightThemeRect{
+    width: 160px;
+    height: 70px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+.darkThemeRect{
+    width: 160px;
+    height: 70px;
+    background-color: black;
+    border-radius: 4px;
+}
+.timeSettingsTitle{
+    font-size: 20px;
+}
+.settingSubtitle{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 28px 0 15px;
+}
+.settingsVariants{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.settingVariant{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
 }

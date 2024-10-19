@@ -11,6 +11,36 @@
         "tasks": "Tasks",
         "reports": "Reports"
     },
-    "english": "English",
-    "russian": "Russian"
+    "settings": {
+        "colorScheme": "Color Scheme",
+        "colorTheme": "Color Theme",
+        "colorThemeVariants": {
+            "light": "Light",
+            "dark": "Dark"
+        },
+        "timeSettings": "Time display settings",
+        "weekStart": "Start of the week",
+        "weekStartVariants": {
+            "sundey": "Sunday",
+            "mondey": "Monday"
+        },
+        "timeFormat": "Time Format",
+        "timeFormatVariants": {
+            "24hours": "24 hours",
+            "12hours": "12 hours"
+        },
+        "dateFormat": "Date Format",
+        "dateFormatVariant": {
+            "mm/dd/gg": "MM/DD/YY",
+            "dd/mm/gg": "DD/MM/YY",
+            "mm.gg.gg": "MM.DD.GG",
+            "gg.mm.gg": "DD.MM.GG"
+        }
+    },
+    "lang": "Language",
+    "langVariants": {
+        "english": "English",
+        "russian": "Russian"    
+    }
+
 }

@@ -38,6 +38,18 @@ button{
   --text-primary: #0D0D0D;
   --accent: #434EAF;
   --opacity-accent: rgba(67, 78, 175, 0.2);
+  --color-schema-blueViolet: #434EAF;
+  --color-schema-blue: #0B0EAF;
+  --color-schema-lightBlue: #36BCD3;
+  --color-schema-green: #3C8B3C;
+  --color-schema-darkGreen: #1D4221;
+  --color-schema-greenYellow: #A4A428;
+  --color-schema-violet: #582D95;
+  --color-schema-lavander: #868BF9;
+  --color-schema-pink: #CB53A7;
+  --color-schema-brown: #460303;
+  --color-schema-red: #BF1619;
+  --color-schema-orange: #CF5E21;
 }
 
 [data-theme='light-blue'] {
