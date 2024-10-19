@@ -1,5 +1,16 @@
 {
-    "helloWorld": "Hello world",
+    "menu": {
+        "projects": "Projects",
+        "myTasks": "My tasks",
+        "settings": "Settings"
+    },
+    "projectMenu": {
+        "aboutProject": "About project",
+        "team": "Team",
+        "timeline": "Timeline",
+        "tasks": "Tasks",
+        "reports": "Reports"
+    },
     "english": "English",
     "russian": "Russian"
 }

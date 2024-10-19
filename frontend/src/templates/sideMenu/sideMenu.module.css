@@ -1,0 +1,5 @@
+.sideMenu{
+    display: flex;
+    box-shadow: 1px 0px 10px var(--opacity-accent);
+    width: fit-content;
+}

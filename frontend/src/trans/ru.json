@@ -1,5 +1,16 @@
 {
-    "helloWorld": "Привет, мир!",
+    "menu": {
+        "projects": "Проекты",
+        "myTasks": "Мои задачи",
+        "settings": "Настройки"
+    },
+    "projectMenu": {
+        "aboutProject": "О проекте",
+        "team": "Команда",
+        "timeline": "Тайм-лайн",
+        "tasks": "Задачи",
+        "reports": "Отчеты"
+    },
     "english": "Английский",
     "russian": "Русский"
 }

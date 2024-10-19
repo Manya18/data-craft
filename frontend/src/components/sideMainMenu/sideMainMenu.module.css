@@ -1,0 +1,85 @@
+.sideMenu{
+    width: 100%;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background);
+    border-right: 1px solid var(--border-color);
+    &.closedMenu{
+        max-width: 62px;
+        background-color: var(--accent);
+        border-right: none;
+        .menuItem{
+            justify-content: center;
+            color: var(--text-accent);
+        }
+        .logo{
+            justify-content: center;
+        }
+        .divider{
+            color: var(--opacity-accent);
+        }
+    }
+}
+.divider{
+    color: var(--border-color);
+    /* border-width: thin; */
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 50px;
+    background-color: var(--accent);
+    color: var(--text-accent);
+}
+.menuTitle{
+    font-size: 24px;
+    font-weight: 700;   
+}
+.menuItem{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    height: 50px;
+    &:hover{
+        background-color: var(--opacity-accent);
+    }
+}
+.projectsBtn{
+    justify-content: space-between;
+}
+.projectButtonGroup{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.projectsList{
+    display: flex;
+    flex-direction: column;
+}
+.projectsListItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    padding: 12px 10px 0px 56px;
+    & > a{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-decoration: none;   
+        color: var(--text-primary); 
+    }
+    &:hover{
+        background-color: var(--opacity-accent);
+    }
+}
+.selected{
+    background-color: var(--opacity-accent);
+}
