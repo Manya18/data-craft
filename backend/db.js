@@ -7,4 +7,4 @@ const pool = new Pool({
     database: 'datacraft'
 });
 
-module.exports = pool();
+module.exports = pool;
