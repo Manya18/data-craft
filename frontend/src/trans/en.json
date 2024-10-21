@@ -37,6 +37,12 @@
             "gg.mm.gg": "DD.MM.GG"
         }
     },
+    "tabs": {
+        "table": "Table",
+        "gant": "Gantt Chart", 
+        "kanban": "Kanban", 
+        "analysis": "Analysis"
+    },
     "lang": "Language",
     "langVariants": {
         "english": "English",

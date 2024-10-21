@@ -1,0 +1,13 @@
+.tabs{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.tab{
+    font-size: 16px;
+    padding-bottom: 7px;
+    &.active{
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+}
