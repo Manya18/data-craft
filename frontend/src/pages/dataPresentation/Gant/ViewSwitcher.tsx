@@ -1,5 +1,6 @@
 import React from "react";
 import "gantt-task-react/dist/index.css";
+import styles from "./ViewSwitcher.module.css";
 import { ViewMode } from "gantt-task-react";
 import { t } from "i18next";
 type ViewSwitcherProps = {
@@ -12,41 +13,27 @@ export const ViewSwitcher: React.FC<ViewSwitcherProps> = ({
     onViewListChange,
     isChecked
 }) => {
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedMode = event.target.value as ViewMode;
+        onViewModeChange(selectedMode);
+    };
     return (
-        <div className="ViewContainer">
-            <button className="Button" onClick={() => onViewModeChange(ViewMode.Day)}>
-                {t(`gant.day`)}
-            </button>
-            <button
-                className="Button"
-                onClick={() => onViewModeChange(ViewMode.Week)}
-            >
-                {t(`gant.week`)}
+        <div className={styles.viewContainer}>
+            <select onChange={handleChange} defaultValue={ViewMode.Day}>
+                <option value={ViewMode.Day}>{t(`gant.day`)}</option>
+                <option value={ViewMode.Week}>{t(`gant.week`)}</option>
+                <option value={ViewMode.Month}>{t(`gant.month`)}</option>
+                <option value={ViewMode.Year}>{t(`gant.year`)}</option>
+            </select>
 
-            </button>
-            <button
-                className="Button"
-                onClick={() => onViewModeChange(ViewMode.Month)}
-            >
-                {t(`gant.month`)}
-            </button>
-
-            <button
-                className="Button"
-                onClick={() => onViewModeChange(ViewMode.Year)}
-            >
-                {t(`gant.year`)}
-            </button>
-
-            <div className="Switch">
-                <label className="Switch_Toggle">
+            <div className={styles.switch}>
                     <input
+                        className={styles.checkbox}
                         type="checkbox"
                         defaultChecked={isChecked}
                         onClick={() => onViewListChange(!isChecked)}
                     />
                     <span className="Slider" />
-                </label>
                 {t(`gant.showTable`)}
             </div>
         </div>

@@ -1,0 +1,30 @@
+.switch,
+.viewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.switch {
+    padding: 0 10px;
+}
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    appearance: none;
+    border: 2px solid var(--accent);
+    background-color: var(--background);
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background-color: var(--opacity-accent);
+}
+
+.checkbox:checked::after {
+    content: '✔';
+    top: -3px;
+    position: relative;
+    color: var(--accent);
+}

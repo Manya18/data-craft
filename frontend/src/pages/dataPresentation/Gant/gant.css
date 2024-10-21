@@ -40,3 +40,7 @@
 ._2RbVy {
     fill: #98a1a9;
 }
+
+.container {
+    display: flex;
+}

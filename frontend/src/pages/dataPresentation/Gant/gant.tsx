@@ -80,12 +80,14 @@ const Gant = () => {
 
     return (
         <div className="Wrapper">
-            <ViewSwitcher
-                onViewModeChange={viewMode => setView(viewMode)}
-                onViewListChange={setIsChecked}
-                isChecked={isChecked}
-            />
-            <h3>{t(`gant.title`)}</h3>
+            <div className="container">
+                <h3>{t(`gant.title`)}</h3>
+                <ViewSwitcher
+                    onViewModeChange={viewMode => setView(viewMode)}
+                    onViewListChange={setIsChecked}
+                    isChecked={isChecked}
+                />
+            </div>
             <Gantt
                 tasks={tasks}
                 viewMode={view}
