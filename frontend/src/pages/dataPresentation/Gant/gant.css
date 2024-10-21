@@ -1,0 +1,42 @@
+._3eULf {
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+._34SS0:nth-of-type(2n) {
+    background-color: var(--opacity-accent);
+    color: var(--text-primary);
+}
+
+._3lLk3,
+._2QjE6 {
+    color: var(--text-primary);
+}
+
+._2q1Kt,
+._9w8d5 {
+    fill: var(--text-primary);
+}
+
+.today,
+._2dZTy:nth-child(2n) {
+    fill: var(--opacity-accent);
+}
+
+._35nLX,
+._2dZTy {
+    fill: var(--background);
+    color: var(--text-primary);
+}
+
+._3zRJQ {
+    fill: var(--text-accent);
+}
+
+._2pZMF {
+    fill: var(--accent)
+}
+
+._2RbVy {
+    fill: #98a1a9;
+}

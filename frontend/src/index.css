@@ -21,15 +21,43 @@ code {
     monospace;
 }
 
-h1, button {
+h1,
+button {
   margin: 0;
   padding: 0;
 }
 
-button{
+button {
   background-color: unset;
   color: unset;
   border: none;
+}
+
+input:focus {
+  outline: 2px solid var(--opacity-accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  position: relative;
+}
+
+td:hover,
+th:hover {
+  background: var(--opacity-accent);
 }
 
 :root {
@@ -69,6 +97,7 @@ button{
   --opacity-accent: rgba(67, 78, 175, 0.2);
   --text-accent: #ffffff;
 }
+
 [data-theme='light-red'] {
   --background: #ffffff;
   --border-color: #D9D9D9;
@@ -77,6 +106,7 @@ button{
   --opacity-accent: rgba(198, 74, 76, 0.2);
   --text-accent: #ffffff;
 }
+
 [data-theme='dark-red'] {
   --background: #000000;
   --border-color: #D9D9D9;

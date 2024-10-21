@@ -39,14 +39,32 @@
     },
     "tabs": {
         "table": "Table",
-        "gant": "Gantt Chart", 
-        "kanban": "Kanban", 
+        "gant": "Gantt Chart",
+        "kanban": "Kanban",
         "analysis": "Analysis"
     },
     "lang": "Language",
     "langVariants": {
         "english": "English",
-        "russian": "Russian"    
-    }
+        "russian": "Russian"
+    },
+    "table": {
+        "deleteColumn": "Delete Column",
+        "deleteLine": "Delete Line",
+        "add": "Add",
+        "filter": "Filter",
+        "search": "Search"
+    },
+    "gant": {
+        "day": "Day",
+        "week": "Week",
+        "month": "Month",
+        "year": "Year",
+        "showTable": "Show Task List",
+        "title": "Gantt chart",
+        "duration": "Duration",
+        "progress": "Progress",
+        "days": "day(s)"
 
+    }
 }
