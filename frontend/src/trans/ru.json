@@ -37,6 +37,12 @@
             "ddmmgg": "ДД.ММ.ГГ"
         }
     },
+    "tabs": {
+        "table": "Таблица",
+        "gant": "Диаграмма Ганта", 
+        "kanban": "Канбан", 
+        "analysis": "Анализ"
+    },
     "lang": "Язык",
     "langVariants": {
         "english": "Английский",
