@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import './i18n'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/homePage/HomePage';
@@ -61,7 +60,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: '',
-            element: <Navigate to="gantt" />
+            element: <Navigate to="table" replace/>
           },
           {
             path: "table",

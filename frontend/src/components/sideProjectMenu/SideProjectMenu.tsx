@@ -1,7 +1,7 @@
 import { t } from "i18next";
 import styles from "./sideProjectMenu.module.css"
 import { Divider } from "@mui/material";
-import { menuItems } from "../../dataStructures/projectMenuData";
+import { menuItems } from "../../logic/projectMenuData";
 import { isTabActive } from "../../logic/getActiveTab";
 
 const SideProjectMenu = () => {
