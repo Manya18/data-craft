@@ -28,7 +28,7 @@ const initialCards: Card[] = [
     },
 ];
 
-const Board = () => {
+const Kanban = () => {
     return (
         <div>
             <h3>{t(`kanban.title`)}</h3>
@@ -41,4 +41,4 @@ const Board = () => {
     );
 };
 
-export default Board;
+export default Kanban;

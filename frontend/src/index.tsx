@@ -12,6 +12,7 @@ import TeamPage from './pages/teamPage/TeamPage';
 import TimelinePage from './pages/timelinePage/TimelinePage';
 import Gant from './pages/dataPresentation/Gant/gant';
 import InteractiveTable from './pages/dataPresentation/InteractiveTable/InteractiveTable';
+import Kanban from './pages/dataPresentation/Kanban/kanban';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -20,20 +21,20 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage/>,
-    errorElement: <Page404/>
+    element: <HomePage />,
+    errorElement: <Page404 />
   },
   {
     path: '/my-tasks',
-    element: <HomePage/>,
+    element: <HomePage />,
   },
   {
     path: '/settings',
-    element: <SettingsPage/>,
+    element: <SettingsPage />,
   },
   {
     path: '/projects',
-    element: <ProjectsPage/>,
+    element: <ProjectsPage />,
   },
   {
     path: '/projects/:id',
@@ -42,72 +43,72 @@ const router = createBrowserRouter([
         path: '',
         element: <Navigate to="about-project" />
       },
-      { 
-        path: 'about-project', 
-        element: <AboutProjectPage/>
+      {
+        path: 'about-project',
+        element: <AboutProjectPage />
       },
-      { 
-        path: 'team', 
-        element: <TeamPage/>
+      {
+        path: 'team',
+        element: <TeamPage />
       },
-      { 
-        path: 'analysis', 
-        element: <HomePage/>
+      {
+        path: 'analysis',
+        element: <HomePage />
       },
-      { 
-        path: 'timeline', 
-        element: <TimelinePage/>,
+      {
+        path: 'timeline',
+        element: <TimelinePage />,
         children: [
           {
             path: '',
-            element: <Navigate to="table" replace/>
+            element: <Navigate to="table" replace />
           },
           {
             path: "table",
-            element: <InteractiveTable/>
+            element: <InteractiveTable />
           },
           {
             path: "gantt",
-            element: <Gant/>
+            element: <Gant />
           },
           {
             path: "kanban",
-            element: <HomePage/>
+            element: <Kanban />
           },
           {
             path: "analysis",
-            element: <HomePage/>
+            element: <HomePage />
           }
         ]
       },
-      { 
-        path: 'tasks', 
-        element: <HomePage/>,
+      {
+        path: 'tasks',
+        element: <HomePage />,
         children: [
           {
             path: "table",
-            element: <HomePage/>
+            element: <HomePage />
           },
           {
             path: "gantt",
-            element: <HomePage/>
+            element: <HomePage />
           },
           {
             path: "kanban",
-            element: <HomePage/>
+            element: <HomePage />
           },
           {
             path: "analysis",
-            element: <HomePage/>
+            element: <HomePage />
           }
         ]
       }
     ]
-  },  
+  },
 ])
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
