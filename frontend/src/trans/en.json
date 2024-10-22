@@ -1,4 +1,6 @@
 {
+    "save": "Save",
+    "search": "Поиск",
     "menu": {
         "projects": "Projects",
         "myTasks": "My tasks",
@@ -39,9 +41,14 @@
     },
     "tabs": {
         "table": "Table",
-        "gant": "Gantt Chart",
+        "gantt": "Gantt Chart",
         "kanban": "Kanban",
         "analysis": "Analysis"
+    },
+    "buttons": {
+        "sorting": "Сортировка",
+        "add": "Добавить",
+        "filters": "Фильтры"
     },
     "lang": "Language",
     "langVariants": {
@@ -64,7 +71,22 @@
         "title": "Gantt chart",
         "duration": "Duration",
         "progress": "Progress",
-        "days": "day(s)"
-
+        "days": "day(s)"  
+    },
+    "teamPage": {
+        "delete": "Delete",
+        "change": "Change",
+        "invite": "Invite",
+        "revoke": "Revoke",
+        "admin": "Administrator",
+        "member": "Member"
+    },
+    "aboutProject": {
+        "title": "Title",
+        "dates": "Deadlines",
+        "budget": "Budget",
+        "goal": "Goal",
+        "description": "Description",
+        "documents": "Documents"
     }
 }

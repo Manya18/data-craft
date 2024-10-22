@@ -9,11 +9,11 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
 import { Divider } from "@mui/material";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import { isTabActive } from "../../logic/getActiveTab";
 
 const SideMainMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isProjectsOpen, setIsProjectsOpen] = useState(true);
-  const currentPath = (new URL(window.location.href)).pathname.slice(1)
 
   const projects = [
     {
@@ -44,7 +44,7 @@ const SideMainMenu = () => {
       </div>
       <Divider className={styles.divider} />
       <a
-        className={styles.menuItem + " " + styles.projectsBtn + " " + (currentPath==="projects" && styles.active)}
+        className={styles.menuItem + " " + styles.projectsBtn + " " + (isTabActive("projects") && styles.active)}
         href="/projects"
       >
         <div className={styles.projectButtonGroup}>
@@ -73,19 +73,19 @@ const SideMainMenu = () => {
           isMenuOpen &&
           projects.map((project) => (
             <div key={project.id} className={styles.projectsListItem}>
-              <a href={`/projects${project.id}`} title={project.title}>
+              <a href={`/projects/${project.id}`} title={project.title}>
                 {project.title}
               </a>
               <Divider />
             </div>
           ))}
       </div>
-      <a className={styles.menuItem + " " + (currentPath==="tasks-assigned-by-me" && styles.active)} href="/tasks-assigned-by-me">
+      <a className={styles.menuItem + " " + (isTabActive("my-tasks") && styles.active)} href="/tasks-assigned-by-me">
         <ChecklistOutlinedIcon />
         {isMenuOpen && t("menu.myTasks")}
       </a>
       <Divider className={styles.divider} />
-      <a className={styles.menuItem + " " + (currentPath==="settings" && styles.active)} href="/settings">
+      <a className={styles.menuItem + " " + (isTabActive("settings") && styles.active)} href="/settings">
         <SettingsOutlinedIcon />
         {isMenuOpen && t("menu.settings")}
       </a>

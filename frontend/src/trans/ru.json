@@ -1,4 +1,6 @@
 {
+    "save": "Сохранить",
+    "search": "Поиск",
     "menu": {
         "projects": "Проекты",
         "myTasks": "Мои задачи",
@@ -39,9 +41,14 @@
     },
     "tabs": {
         "table": "Таблица",
-        "gant": "Диаграмма Ганта",
+        "gantt": "Диаграмма Ганта",
         "kanban": "Канбан",
         "analysis": "Анализ"
+    },
+    "buttons": {
+        "sorting": "Сортировка",
+        "add": "Добавить",
+        "filters": "Фильтры"
     },
     "lang": "Язык",
     "langVariants": {
@@ -65,5 +72,21 @@
         "duration": "Продолжительность",
         "progress": "Прогресс",
         "days": "дн"
+    },
+    "teamPage": {
+        "delete": "Удалить",
+        "change": "Изменить",
+        "invite": "Пригласить",
+        "revoke": "Отозвать",
+        "admin": "Администратор",
+        "member": "Участник"
+    },
+    "aboutProject": {
+        "title": "Название",
+        "dates": "Сроки",
+        "budget": "Бюджет",
+        "goal": "Цель",
+        "description": "Описание",
+        "documents": "Документы"
     }
 }

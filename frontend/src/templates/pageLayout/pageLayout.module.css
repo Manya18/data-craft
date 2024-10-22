@@ -2,3 +2,20 @@
     display: flex;
     gap: 10px;
 }
+.wrapper{
+    width: 100%;
+    padding: 20px 45px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
