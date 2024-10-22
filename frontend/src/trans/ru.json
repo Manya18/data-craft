@@ -44,6 +44,7 @@
         "analysis": "Анализ"
     },
     "lang": "Язык",
+    "close": "Закрыть",
     "langVariants": {
         "english": "Английский",
         "russian": "Русский"
@@ -65,5 +66,10 @@
         "duration": "Продолжительность",
         "progress": "Прогресс",
         "days": "дн"
+    },
+    "kanban": {
+        "title": "Канбан-доска",
+        "addColumn": "Добавить колонку",
+        "enterName": "Enter column name"
     }
 }
