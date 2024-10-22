@@ -1,0 +1,58 @@
+.teamPage{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.members{
+    padding: 15px 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.member{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.memberInfo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.memberTextInfo{
+    display: flex;
+    flex-direction: column;
+}
+.memberName{
+    font-size: 16px;
+    font-weight: 500;
+}
+.memberRole{
+    font-size: 12px;
+}
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.divider{
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid var(--border-color)
+}
+.addInvitation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+.input{
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 5px;
+    height: 32px;
+    width: 100%;
+    max-width: 500px;
+}

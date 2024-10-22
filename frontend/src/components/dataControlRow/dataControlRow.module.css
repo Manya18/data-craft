@@ -1,0 +1,29 @@
+.dataRowControl{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 27px 0;
+}
+
+.buttonGroup{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 3px 10px;
+    font-weight: 400;
+}
+.search{
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+    min-width: 300px;
+}

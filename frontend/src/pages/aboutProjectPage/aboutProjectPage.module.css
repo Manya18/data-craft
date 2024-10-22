@@ -1,0 +1,39 @@
+.aboutProjectPage{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+.groupWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.label{
+    font-size: 16px;
+    font-weight: 600;
+}
+.input{
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+}
+.dateGroup{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.documents{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.document{
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.button{
+    align-self: flex-end;
+}

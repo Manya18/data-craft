@@ -19,5 +19,6 @@
     }
     &:hover{
         background-color: var(--opacity-accent);
+        opacity: 0.7;
     }
 }

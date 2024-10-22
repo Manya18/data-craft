@@ -12,16 +12,16 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <div className="App" data-theme={`${theme}-${colorTheme}`}>
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/settings" element={<SettingsPage />} />
-          {/* <Route path="/vacancies" element={<VacanciesPage />} />
-          <Route path="/candidates" element={<CandidatesPage />} /> */}
-        </Routes>
+          <Route path="/vacancies" element={<VacanciesPage />} />
+          <Route path="/candidates" element={<CandidatesPage />} />
+        </Routes> */}
       </div>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 
