@@ -165,14 +165,16 @@ CREATE TABLE Person_task(
 ---для получения проекта по id---
 CREATE VIEW project_details AS
 SELECT 
-    p.id,
+    p.id AS project_id,
     p.title,
     p.goal,
     p.description,
-    ps.id AS current_status_id,
-    ps.title AS current_status_title,
-    ps.is_system AS current_status_is_system,
-    ps.project_id AS current_status_project_id,
+    json_build_object(  -- Создаем объект current_status
+        'id', ps.id,
+        'title', ps.title,
+        'is_system', ps.is_system,
+        'project_id', ps.project_id
+    ) AS current_status,  -- Переименовываем в current_status
     p.start_date,
     p.final_date,
     p.budget,
@@ -199,11 +201,10 @@ SELECT
     ARRAY(
         SELECT json_build_object(
             'id', d.id,
-            'document', d.document  -- Убрано кодирование
+            'document', d.document
         )
         FROM Document d
         WHERE d.project_id = p.id
     ) AS documents
 FROM Project p
 LEFT JOIN Project_status ps ON p.current_status_id = ps.id;
-

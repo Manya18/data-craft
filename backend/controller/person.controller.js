@@ -68,7 +68,6 @@ class PersonController {
                 maxAge: 28800000
             });
 
-            console.log(req.cookies.session_id);
             res.status(201).json({
                 id: person.id
             });
