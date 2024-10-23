@@ -22,5 +22,5 @@ export type ProjectStatus = {
 
 export type Document = {
     id: number,
-    document: string
+    document: Buffer
 }

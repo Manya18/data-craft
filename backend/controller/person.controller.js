@@ -63,10 +63,12 @@ class PersonController {
                 return res.status(401).json({ error: 'Неверный логин или пароль' });
             }
 
-            res.cookie('session_id', person.id, {
+            res.cookie('user_id', person.id, {
                 httpOnly: true,
-                maxAge: 7200000
+                maxAge: 28800000
             });
+
+            console.log(req.cookies.session_id);
             res.status(201).json({
                 id: person.id
             });
@@ -75,6 +77,21 @@ class PersonController {
             res.status(500).json({ error: 'Не удалось авторизоваться. Попробуйте позже' });
         } finally {
             client.release();
+        }
+    }
+
+    async logOutPerson(req, res) {
+        res.clearCookie('user_id', { httpOnly: true });
+
+        if (req.session) {
+            req.session.destroy(err => {
+                if (err) {
+                    return res.status(500).json({ error: 'Не удалось выйти' });
+                }
+                return res.status(200).json({ message: 'Успешный выход' });
+            });
+        } else {
+            return res.status(200).json({ message: 'Успешный выход' });
         }
     }
 }

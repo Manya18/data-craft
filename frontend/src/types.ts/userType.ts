@@ -5,7 +5,7 @@ export type User = {
     patronymic: string,
     email: string,
     phone: string,
-    photo?: string
+    photo?: Buffer
 }
 
 export type ProjectUser = {
