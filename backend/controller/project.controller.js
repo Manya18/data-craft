@@ -27,8 +27,8 @@ class ProjectController {
             const projectId = newProject.rows[0].id;
 
             await client.query(
-                `INSERT INTO Person_project (person_id, project_id, is_admin, role, status_id) 
-                 VALUES ($1, $2, true, 'Владелец', 3)`,
+                `INSERT INTO Person_project (person_id, project_id, is_admin, is_owner, status_id) 
+                 VALUES ($1, $2, true, true, 3)`,
                 [userId, projectId]
             );
 
@@ -53,7 +53,7 @@ class ProjectController {
         const client = await db.connect();
 
         try {
-            const project = await client.query(`SELECT * FROM project_details WHERE project_id = $1;`, [id]);
+            const project = await client.query(`SELECT * FROM project_details WHERE id = $1;`, [id]);
             res.status(201).json(project.rows[0]);
         } catch (error) {
             console.error('Ошибка при получении данных проекта:', error);
@@ -64,10 +64,17 @@ class ProjectController {
     }
 
     async getProjects(req, res) {
+        const userId = req.cookies.user_id;
         const client = await db.connect();
 
         try {
-            const project = await client.query(`SELECT * FROM project_details;`);
+            const project = await client.query(`SELECT * 
+            FROM project_details
+            WHERE id IN (
+                SELECT pp.project_id
+                FROM Person_project pp
+                WHERE pp.person_id = $1
+            );`, [userId]);
             res.status(201).json(project.rows);
         } catch (error) {
             console.error('Ошибка при получении данных проектов:', error);

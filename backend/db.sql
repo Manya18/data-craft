@@ -36,7 +36,7 @@ CREATE TABLE Person(
 	email VARCHAR(254) NOT NULL UNIQUE,
 	phone VARCHAR(11) NOT NULL UNIQUE,
 	password CHAR(60) NOT NULL,
-	photo BYTEA
+	photo TEXT
 );
 
 CREATE TABLE Settings(
@@ -64,31 +64,32 @@ CREATE TABLE Project_status(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(50) NOT NULL,
 	is_system BOOL DEFAULT false,
+	color VARCHAR(7),
 	project_id INTEGER REFERENCES Project(id) ON DELETE CASCADE
 );
 ALTER TABLE Project
 ADD CONSTRAINT fk_current_status
 FOREIGN KEY (current_status_id) REFERENCES Project_status(id) ON DELETE CASCADE;
-INSERT INTO Project_status (title, is_system) VALUES
-('Новый', true),
-('В работе', true),
-('Завершен', true),
-('Приостановлен', true),
-('Не активный', true);
+INSERT INTO Project_status (title, is_system, color) VALUES
+('Новый', true, '#6D77F9'),
+('В работе', true, '#FFF600'),
+('Завершен', true, '#09FF00'),
+('Приостановлен', true, '#FF0000'),
+('Не активный', true, '#D9D9D9');
 
 CREATE TABLE Person_project(
 	id SERIAL PRIMARY KEY,
 	person_id INTEGER NOT NULL REFERENCES Person(id) ON DELETE CASCADE,
 	project_id INTEGER NOT NULL REFERENCES Project(id) ON DELETE CASCADE,
 	is_admin BOOL NOT NULL,
+	is_admin BOOL DEFAULT false,
 	role VARCHAR(50),
 	status_id INTEGER DEFAULT 1 REFERENCES Invitation_status(id) ON DELETE RESTRICT
 );
 
 CREATE TABLE Document(
 	id SERIAL PRIMARY KEY,
-	document_name varchar(255) NOT NULL,
-	document BYTEA,
+	document TEXT,
 	project_id INTEGER NOT NULL REFERENCES Project(id) ON DELETE CASCADE
 );
 
@@ -106,16 +107,17 @@ CREATE TABLE Stage_status(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(50) NOT NULL,
 	is_system BOOL DEFAULT false,
+	color VARCHAR(7),
 	stage_id INTEGER REFERENCES Stage(id) ON DELETE CASCADE
 );
 ALTER TABLE Stage
 ADD CONSTRAINT fk_current_status
 FOREIGN KEY (current_status_id) REFERENCES Stage_status(id) ON DELETE CASCADE;
-INSERT INTO Stage_status (title, is_system) VALUES
-('Не начат', true),
-('В работе', true),
-('Завершен', true),
-('Приостановлен', true);
+INSERT INTO Stage_status (title, is_system, color) VALUES
+('Не начат', true, '#6D77F9'),
+('В работе', true, '#FFF600'),
+('Завершен', true, '#09FF00'),
+('Приостановлен', true, '#FF0000');
 
 CREATE TABLE New_column(
 	id SERIAL PRIMARY KEY,
@@ -144,16 +146,17 @@ CREATE TABLE Task_status(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(50) NOT NULL,
 	is_system BOOL DEFAULT false,
+	color VARCHAR(7),
 	task_id INTEGER REFERENCES Task(id) ON DELETE CASCADE
 );
 ALTER TABLE Task
 ADD CONSTRAINT fk_current_status
 FOREIGN KEY (current_status_id) REFERENCES Task_status(id) ON DELETE CASCADE;
-INSERT INTO Task_status (title, is_system) VALUES
-('Новый', true),
-('В работе', true),
-('Завершен', true),
-('Приостановлен', true);
+INSERT INTO Task_status (title, is_system, color) VALUES
+('Новый', true, '#6D77F9'),
+('В работе', true, '#FFF600'),
+('Завершен', true, '#09FF00'),
+('Приостановлен', true, '#FF0000');
 
 CREATE TABLE Person_task(
 	id SERIAL PRIMARY KEY,
@@ -161,11 +164,10 @@ CREATE TABLE Person_task(
 	task_id INTEGER NOT NULL REFERENCES Task(id) ON DELETE CASCADE
 );
 
-
----для получения проекта по id---
+---для получения данных проекта---
 CREATE VIEW project_details AS
 SELECT 
-    p.id AS project_id,
+    p.id,
     p.title,
     p.goal,
     p.description,
@@ -173,11 +175,14 @@ SELECT
         'id', ps.id,
         'title', ps.title,
         'is_system', ps.is_system,
-        'project_id', ps.project_id
+        'project_id', ps.project_id,
+		'color', ps.color
     ) AS current_status,  -- Переименовываем в current_status
     p.start_date,
     p.final_date,
     p.budget,
+    
+    -- Получаем массив участников
     ARRAY(
         SELECT json_build_object(
             'user', json_build_object(
@@ -198,6 +203,8 @@ SELECT
         JOIN Invitation_status ins ON pp.status_id = ins.id
         WHERE pp.project_id = p.id
     ) AS members,
+
+    -- Получаем массив документов
     ARRAY(
         SELECT json_build_object(
             'id', d.id,
@@ -205,6 +212,24 @@ SELECT
         )
         FROM Document d
         WHERE d.project_id = p.id
-    ) AS documents
+    ) AS documents,
+
+    -- Получаем информацию о владельце проекта
+    (
+        SELECT json_build_object(
+            'id', per.id,
+            'surname', per.surname,
+            'name', per.name,
+            'patronymic', per.patronymic,
+            'email', per.email,
+            'phone', per.phone,
+            'photo', per.photo
+        )
+        FROM Person_project pp
+        JOIN Person per ON pp.person_id = per.id
+        WHERE pp.project_id = p.id AND pp.is_owner = TRUE
+        LIMIT 1  -- Предполагаем, что только один владелец
+    ) AS owner
+
 FROM Project p
 LEFT JOIN Project_status ps ON p.current_status_id = ps.id;

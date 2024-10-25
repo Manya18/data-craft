@@ -17,7 +17,8 @@ export type ProjectStatus = {
     id: number,
     title: string,
     is_system: boolean,
-    project_id?: number
+    project_id?: number,
+    color?: string
 }
 
 export type Document = {
